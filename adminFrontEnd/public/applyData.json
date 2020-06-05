@@ -1,0 +1,35 @@
+{
+    "applyInfo": [
+      {
+        "applyID": 1,
+        "userID": "452223199707090000",
+        "equipmentName": "医用酒精",
+        "position": "2栋27",
+        "amount": "500ml",
+        "description": "消毒",
+        "state": "2",
+        "date": "2019-11-1"
+      },
+      {
+        "applyID": 2,
+        "userID": "452223199707090000",
+        "equipmentName": "特殊药物",
+        "position": "2栋27",
+        "amount": "2盒",
+        "description": "糖尿病患者XXXXXX药物",
+        "state": "1",
+        "date": "2019-11-1"
+      },
+      {
+        "applyID": 3,
+        "userID": "452223199707090000",
+        "equipmentName": "消毒液",
+        "position": "2栋27",
+        "amount": "500ml",
+        "description": "消毒",
+        "state": "0",
+        "date": "2019-11-1"
+      }
+    ],
+    "applyNum": 3
+}

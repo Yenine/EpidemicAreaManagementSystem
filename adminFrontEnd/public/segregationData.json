@@ -1,0 +1,125 @@
+{
+    "list": [
+      {
+        "id": 1,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 2,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 3,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 4,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 5,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 6,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 7,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 8,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 9,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 10,
+        "name": "林幺",
+        "position": "2栋27",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 11,
+        "name": "林幺",
+        "buildingId":"1",
+        "familyId":"1",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 12,
+        "name": "林幺",
+        "buildingId":"1",
+        "familyId":"1",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      },
+      {
+        "id": 13,
+        "name": "林幺",
+        "buildingId":"1",
+        "familyId":"1",
+        "state": "隔离中",
+        "beginDate": "2019-11-1",
+        "endDate": "2019-11-9",
+        "phone": 137957
+      }
+
+    ],
+    "pageTotal": 13
+}

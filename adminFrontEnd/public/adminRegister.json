@@ -1,0 +1,38 @@
+{
+    "todayList": {
+      "completed": 123,
+      "uncompleted": 145
+    },
+    "todayIncrease": {
+      "diagnosis": 1,
+      "suspected": 3,
+      "observed": 2,
+      "segregation": 7
+    },
+    "total": {
+      "diagnosis": 11,
+      "suspected": 39,
+      "observed": 28,
+      "segregation": 72
+    },
+    "time": ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8"],
+    "trend":[
+      {
+        "label": "疑似",
+        "data": [0, 8, 26 ,31 ,42, 57, 81,160]
+      },
+      {
+        "label": "发烧",
+        "data": [0, 3, 15,28 ,39, 50, 71,97]
+      },
+      {
+        "label": "确诊",
+        "data": [0, 1, 7, 18 ,26, 34, 60 ,81]
+      },
+      {
+        "label": "死亡",
+        "data": [0, 0, 0, 1 ,6, 11, 21 ,27]
+      }
+    ]
+
+}

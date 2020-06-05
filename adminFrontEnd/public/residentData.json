@@ -1,0 +1,104 @@
+{
+    "data": {
+      "info": [
+        {
+          "userID": 1,
+          "userName": "林幺",
+          "phone": 137957,
+          "buildingID": "2",
+          "familyID": "27",
+          "state": "1",
+          "familyName": [
+            "林森",
+            "木禾"
+          ]
+        },
+        {
+          "userID": 2,
+          "userName": "林森",
+          "phone": 137957,
+          "buildingID": "2",
+          "familyID": "27",
+          "state": "1",
+          "familyName": [
+            "林幺",
+            "木禾"
+          ]
+        },
+        {
+          "userID": 1,
+          "userName": "林幺",
+          "phone": 137957,
+          "buildingID": "2",
+          "familyID": "27",
+          "state": "1",
+          "familyName": [
+            "林森",
+            "木禾"
+          ]
+        },
+        {
+          "userID": 2,
+          "userName": "林森",
+          "phone": 137957,
+          "buildingID": "2",
+          "familyID": "27",
+          "state": "1",
+          "familyName": [
+            "林幺",
+            "木禾"
+          ]
+        },
+        {
+          "userID": 1,
+          "userName": "林幺",
+          "phone": 137957,
+          "buildingID": "2",
+          "familyID": "27",
+          "state": "1",
+          "familyName": [
+            "林森",
+            "木禾"
+          ]
+        },
+        {
+          "userID": 2,
+          "userName": "林森",
+          "phone": 137957,
+          "buildingID": "2",
+          "familyID": "27",
+          "state": "1",
+          "familyName": [
+            "林幺",
+            "木禾"
+          ]
+        },
+        {
+          "userID": 1,
+          "userName": "林幺",
+          "phone": 137957,
+          "buildingID": "2",
+          "familyID": "27",
+          "state": "1",
+          "familyName": [
+            "林森",
+            "木禾"
+          ]
+        },
+        {
+          "userID": 2,
+          "userName": "林森",
+          "phone": 137957,
+          "buildingID": "2",
+          "familyID": "27",
+          "state": "1",
+          "familyName": [
+            "林幺",
+            "木禾"
+          ]
+        }
+      ],
+      "pageTotal": 8
+    },
+  "result": 0
+}
