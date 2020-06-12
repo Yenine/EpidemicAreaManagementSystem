@@ -125,9 +125,13 @@
             </el-col>
             </el-col>
         </el-row>
-        <el-dialog title="当日情况" :visible.sync="conditionVisible" width="40%">
+        <el-dialog title="当日情况" :visible.sync="conditionVisible" width="50%">
             <el-table
                     :data="todayCondition.slice((pageIndex-1)*pageSize,pageIndex*pageSize)">
+                <el-table-column
+                        prop="userName"
+                        label="姓名"
+                ></el-table-column>
                 <el-table-column
                         prop="userID"
                         label="ID"

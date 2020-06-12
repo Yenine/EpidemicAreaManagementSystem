@@ -2,8 +2,8 @@
     <div class="login-wrap">
         <div class="ms-login">
             <div class="ms-title">后台管理系统</div>
-            <el-form :model="param" :rules="rules" ref="login" label-width="0px" class="ms-content">
-                <el-form-item prop="username">
+            <el-form :model="param" :rules="rules1" ref="login" label-width="0px" class="ms-content">
+                <el-form-item prop="userid">
                     <el-input v-model="param.userid" placeholder="userID">
                         <el-button slot="prepend" icon="el-icon-lx-people"></el-button>
                     </el-input>
@@ -26,39 +26,38 @@
             </el-form>
         </div>
         <el-dialog title="注册" :visible.sync="registerVisible" width="25%">
-            <el-form ref="form" :model="form" label-width="70px">
-                <el-form-item label="姓名">
+            <el-form ref="registerForm" :model="registerForm" :rules="rules2" label-width="80px">
+                <el-form-item prop="userName" label="姓名">
                     <el-col :span="18">
-                        <el-input v-model="form.userName" placeholder="username"></el-input>
+                        <el-input v-model="registerForm.userName" placeholder="username"></el-input>
                     </el-col>
                 </el-form-item>
-                <el-form-item label="身份ID">
+                <el-form-item prop="userID" label="身份ID">
                     <el-col :span="18">
-                        <el-input v-model="form.userID" placeholder="userID"></el-input>
+                        <el-input v-model="registerForm.userID"  placeholder="userID"></el-input>
                     </el-col>
                 </el-form-item>
-                <el-form-item label="密码">
+                <el-form-item prop="password" label="密码">
                     <el-col :span="18">
-                        <el-input type="password" v-model="form.password" placeholder="password"></el-input>
+                        <el-input type="password" v-model="registerForm.password" placeholder="password"></el-input>
                     </el-col>
                 </el-form-item>
-                <el-form-item label="联系方式">
+                <el-form-item prop="phone" label="联系方式">
                     <el-col :span="18">
-                        <el-input v-model="form.phone" placeholder="phonenumber"></el-input>
+                        <el-input v-model="registerForm.phone" placeholder="phonenumber"></el-input>
                     </el-col>
                 </el-form-item>
 
-                <el-form-item label="管理栋号">
+                <el-form-item prop="buildingID" label="管理栋号">
                     <el-col :span="18">
-                        <el-input v-model="form.buildingID" placeholder="XX_XX_XX"></el-input>
+                        <el-input v-model="registerForm.buildingID" placeholder="XX_XX_XX"></el-input>
                     </el-col>
-
                 </el-form-item>
             </el-form>
             <span slot="footer" class="dialog-footer">
                     <el-button @click="registerVisible = false">取 消</el-button>
-                    <el-button type="primary" @click="submitRegister">注册</el-button>
-                </span>
+                    <el-button type="primary" @click="submitRegisterForm()">注册</el-button>
+                    </span>
         </el-dialog>
     </div>
 </template>
@@ -72,18 +71,26 @@ export default {
                 password: '',
                 role:true,
             },
-            rules: {
-                userid: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-                password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
-            },
-            registerVisible:false,
-            form:{
-                userID:'',
+            registerForm:{
+                userID: '',
+                password: '',
                 userName:'',
-                password:'',
                 phone:'',
                 buildingID:''
-            }
+            },
+            rules1: {
+                userid: [{ required: true, message: '请输入用户ID', trigger: 'blur' }],
+                password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+            },
+            rules2: {
+                userID: [{ required: true, message: '请输入用户ID', trigger: 'blur' },{ min: 18, max: 18, message: '请输入有效身份ID'}],
+                password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+                userName:[{ required: true, message: '请输入用户名', trigger: 'blur' }],
+                phone:[{ required: true, message: '请输入联系方式', trigger: 'blur' }],
+                buildingID:[{ required: true, message: '请输入管理栋号', trigger: 'blur' }],
+            },
+
+            registerVisible:false,
         };
     },
     methods: {
@@ -135,30 +142,65 @@ export default {
         ToRegister(){
             this.registerVisible=true;
         },
-
-        submitRegister() {
-            this.registerVisible = false;
-
-            console.log(JSON.stringify(this.form));
-            this.$axios.post("/adminRegister",JSON.stringify(this.form))
-                .then((response)=> {
-                    console.log(response);
-                    let res=response.data;
-                    if(res.result=='0'){
-                        this.$message.success('注册成功');
-                    }
-                    if(res.result=='-2'){
-                        this.$message.error('执行失败');
-                    }
-                    if(res.result=='1000'){
-                        this.$message.error('该身份证已被注册过');
-                    }
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-
-        }
+        submitRegisterForm() {
+            this.$refs.registerForm.validate(valid => {
+                if (valid) {
+                    this.registerVisible = false;
+                    // this.registerForm.phone=this.registerVisible.phone;
+                    console.log(JSON.stringify(this.registerForm));
+                    this.$axios.post("/adminRegister", JSON.stringify(this.registerForm))
+                        .then((response) => {
+                            console.log(response);
+                            let res = response.data;
+                            if (res.result == '0') {
+                                this.$message.success('注册成功');
+                            }
+                            if (res.result == '-2') {
+                                this.$message.error('执行失败');
+                            }
+                            if (res.result == '1000') {
+                                this.$message.error('该身份证已被注册过');
+                            }
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                } else {
+                    console.log('error submit!!');
+                    return false;
+                }
+            });
+        },
+        // submitRegister(formName) {
+        //     this.$refs.form.validate(valid => {
+        //         if (valid) {
+        //             this.registerVisible = false;
+        //             console.log(JSON.stringify(this.form));
+        //             this.$axios.post("/adminRegister", JSON.stringify(this.form))
+        //                 .then((response) => {
+        //                     console.log(response);
+        //                     let res = response.data;
+        //                     if (res.result == '0') {
+        //                         this.$message.success('注册成功');
+        //                     }
+        //                     if (res.result == '-2') {
+        //                         this.$message.error('执行失败');
+        //                     }
+        //                     if (res.result == '1000') {
+        //                         this.$message.error('该身份证已被注册过');
+        //                     }
+        //                 })
+        //                 .catch(function (error) {
+        //                     console.log(error);
+        //                 });
+        //         }
+        //         else {
+        //             this.$message.error('请输入');
+        //             console.log('error submit!!');
+        //             return false;
+        //         }
+        //     });
+        // }
     },
 };
 </script>

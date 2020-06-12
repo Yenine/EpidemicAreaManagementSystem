@@ -175,10 +175,11 @@
 
                 stateList:[{id:'1',name:'健康'},{id:'2',name:'隔离'},{id:'3',name:'疑似'},{id:'4',name:'确诊'},{id:'5',name:'死亡'}],
                 query: {
-                    userID:'',
+                    userID: '',
                     userName: '',
                     buildingID : '',
                     familyID: '',
+                    phone:''
                 },
                 pageIndex: 1,
                 pageSize: 5,
@@ -234,10 +235,11 @@
             // 触发跳转
             handlenameJump(value) {
                 this.query={
-                    userID:'',
+                    userID: '',
                     userName: value,
                     buildingID: '',
                     familyID: '',
+                    phone:''
                 };
                 this.handleSearch();
                 // this.getData();
